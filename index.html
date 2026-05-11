@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>쿠대 5월 초보 라이브 속성반 · 6일 만에 완성하는 구매대행</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root {
+  --ink:       #1C2645;
+  --paper:     #FFFFFF;
+  --cream:     #F4F5F9;
+  --gold:      #C9920A;
+  --gold-lt:   #E8B84B;
+  --gold-pale: #FFFBEF;
+  --red:       #D64530;
+  --green:     #16A66B;
+  --gray:      #4A5275;
+  --gray-lt:   #8A91AA;
+  --border:    rgba(28,38,69,0.1);
+  --shadow:    rgba(28,38,69,0.07);
+  --font:      'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.85;
+  overflow-x: hidden;
+}
+
+/* NAV */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 14px 24px;
+  background: rgba(255,255,255,.97);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo { display:flex; align-items:center; gap:0.75rem; }
+.nav-logo-mark { font-size:1.4rem; letter-spacing:0.1em; color:var(--gold); font-weight:900;}
+.nav-logo-sub {
+  font-size: 13px; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--gray);
+  border-left: 1px solid var(--border);
+  padding-left: 12px; font-weight: 600;
+}
+.nav-cta {
+  background: var(--red); color: #fff;
+  text-decoration: none; border-radius: 4px;
+  padding: 10px 22px;
+  font-size: 14px; font-weight: 700; letter-spacing: .05em;
+  transition: all .2s;
+}
+.nav-cta:hover { background: var(--ink); }
+
+/* COUNTDOWN BANNER */
+.countdown-bar {
+  position: fixed; top: 64px; left: 0; right: 0; z-index: 99;
+  background: var(--red);
+  color: #fff;
+  padding: 10px 24px; text-align: center;
+  font-size: 14.5px; font-weight: 700; letter-spacing: .04em;
+}
+.countdown-bar strong { color: var(--gold-lt); font-weight: 900; margin: 0 6px; }
+
+/* HERO */
+.hero {
+  background: linear-gradient(160deg, #1C2645 0%, #263354 55%, #1a3050 100%);
+  padding: 130px 24px 72px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+  background: linear-gradient(90deg, #C9920A, #E8B84B, #D64530);
+}
+.hero-eyebrow {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin-bottom:24px;
+}
+.hero-eyebrow-line { width:24px; height:1px; background:var(--gold-lt); }
+.hero-eyebrow-text {
+  font-size:13px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold-lt); font-weight:700;
+}
+.hero-title {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900; line-height: 1.15;
+  color: #fff; margin-bottom: 1.25rem;
+}
+.hero-title em {
+  font-style: normal; color: var(--gold-lt); position: relative;
+}
+.hero-title em::after {
+  content: ''; position: absolute; left: 0; bottom: -3px; right: 0;
+  height: 2px; background: var(--gold-lt);
+}
+.hero-sub {
+  font-size: 16px; color: rgba(255,255,255,.72);
+  max-width: 560px; margin: 0 auto 28px;
+  line-height: 1.9; font-weight: 400;
+}
+.hero-target {
+  display:inline-flex; align-items:center; gap:6px;
+  border:1px solid rgba(232,184,75,.4);
+  padding:8px 18px;
+  font-size:13.5px; letter-spacing:.08em;
+  color:var(--gold-lt); text-transform:none;
+  margin-bottom:28px; background:rgba(232,184,75,.1); font-weight:700;
+}
+.hero-cta-group {
+  display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+  margin-bottom:40px;
+}
+.btn-ink {
+  background:var(--gold-lt); color:#1C2645;
+  padding:14px 32px; font-size:14px; font-weight:800;
+  letter-spacing:.04em; text-decoration:none; display:inline-block;
+  border-radius:4px; transition:all .2s;
+}
+.btn-ink:hover { background:#f5ca5a; }
+.btn-outline {
+  border:1px solid rgba(255,255,255,.35); color:rgba(255,255,255,.8);
+  padding:14px 32px; font-size:14px; font-weight:600;
+  letter-spacing:.04em; text-decoration:none; display:inline-block;
+  border-radius:4px; transition:all .2s;
+}
+.btn-outline:hover { border-color:var(--gold-lt); color:var(--gold-lt); }
+.hero-stats {
+  display:flex; gap:40px; flex-wrap:wrap; justify-content:center;
+  padding-top:30px; border-top:1px solid rgba(255,255,255,.12);
+  max-width:560px; margin:0 auto;
+}
+.stat-num {
+  font-size:2.4rem; color:var(--gold-lt);
+  letter-spacing:0.02em; line-height:1; font-weight:900;
+}
+.stat-label {
+  font-size:13px; color:rgba(255,255,255,.6);
+  letter-spacing:.06em; text-transform:uppercase;
+  margin-top:6px; font-weight:600;
+}
+
+/* SCHEDULE STRIP */
+.schedule-strip {
+  background: #fff; border-bottom: 1px solid var(--border);
+  padding: 24px;
+}
+.schedule-inner {
+  max-width: 1080px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+}
+.schedule-card {
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: 20px 24px;
+  display: flex; align-items: center; gap: 18px;
+  background: #fff;
+  transition: border-color .2s, transform .2s;
+}
+.schedule-card:hover { border-color: var(--gold); transform: translateY(-2px); }
+.schedule-icon {
+  width: 56px; height: 56px;
+  background: var(--ink); color: var(--gold-lt);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px; font-weight: 900; flex-shrink: 0;
+}
+.schedule-track-1 .schedule-icon { background: linear-gradient(135deg, #1C2645, #2c5282); }
+.schedule-track-2 .schedule-icon { background: linear-gradient(135deg, #C9920A, #E8B84B); color: #1C2645; }
+.schedule-info { flex: 1; text-align: left; }
+.schedule-track {
+  font-size: 13px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gray); font-weight: 700; margin-bottom: 6px;
+}
+.schedule-name { font-size: 19px; font-weight: 900; color: var(--ink); margin-bottom: 5px; }
+.schedule-date { font-size: 15px; color: var(--gray); font-weight: 500; }
+.schedule-date strong { color: var(--red); font-weight: 800; }
+.schedule-deadline {
+  font-size: 13.5px; color: var(--gray-lt); margin-top: 4px;
+}
+
+/* SECTION COMMON */
+section { position:relative; z-index:1; }
+.section-wrap { max-width:1080px; margin:0 auto; padding:64px 24px; text-align:center; }
+.eyebrow {
+  display:flex; align-items:center; justify-content:center; gap:10px;
+  margin-bottom:12px;
+}
+.eyebrow-line { width:22px; height:1px; background:var(--gold); }
+.eyebrow-text {
+  font-size:12.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--gold); font-weight:700;
+}
+.section-title {
+  font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900;
+  line-height:1.2; color:var(--ink); margin-bottom:1rem;
+}
+.section-desc {
+  color:var(--gray); font-size:15px; max-width:560px;
+  line-height:1.95; font-weight:400; margin:0 auto;
+}
+
+/* TARGET */
+.target { background:var(--paper); border-top:1px solid var(--border); }
+.target-grid {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:16px; margin-top:36px;
+}
+.target-item {
+  background:#fff; padding:28px 24px;
+  border:1px solid var(--border); border-radius:12px;
+  box-shadow:0 2px 12px var(--shadow);
+  text-align:left;
+}
+.target-num {
+  font-size:3rem; color:var(--gold);
+  letter-spacing:0.02em; line-height:1;
+  margin-bottom:0.75rem; font-weight:900;
+}
+.target-title {
+  font-size:16px; font-weight:800; color:var(--ink);
+  margin-bottom:8px; letter-spacing:-.2px;
+}
+.target-desc { font-size:14px; color:var(--gray); line-height:1.8; }
+
+/* CURRICULUM TRACKS */
+.curriculum { background:var(--cream); border-top:1px solid var(--border); }
+.tracks {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+  margin-top: 36px;
+}
+.track-card {
+  background: #fff; border: 1px solid var(--border);
+  border-radius: 16px; overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  display: flex; flex-direction: column;
+}
+.track-head {
+  padding: 28px 28px 24px;
+  position: relative;
+}
+.track-head-1 { background: linear-gradient(135deg, #1C2645, #2c5282); color: #fff; }
+.track-head-2 { background: linear-gradient(135deg, #C9920A, #E8B84B); color: #1C2645; }
+.track-tag {
+  display: inline-block;
+  background: rgba(255,255,255,.18);
+  font-size: 12.5px; letter-spacing: .12em;
+  text-transform: uppercase; font-weight: 700;
+  padding: 5px 14px; border-radius: 3px;
+  margin-bottom: 14px;
+}
+.track-head-2 .track-tag { background: rgba(28,38,69,.18); }
+.track-title {
+  font-size: 22px; font-weight: 900; line-height: 1.25;
+  margin-bottom: 10px; letter-spacing: -.4px;
+}
+.track-schedule {
+  font-size: 14px; opacity: .85; line-height: 1.6; font-weight: 500;
+}
+.track-schedule strong { font-weight: 900; }
+.track-body { padding: 28px; text-align: left; flex: 1; }
+.track-sublabel {
+  font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--gold); font-weight: 700; margin-bottom: 14px;
+}
+.track-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.track-list li {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 14.5px; color: var(--gray); line-height: 1.7;
+}
+.track-list li strong { color: var(--ink); font-weight: 700; display: block; margin-bottom: 2px; font-size: 15px; }
+.track-list-num {
+  width: 26px; height: 26px; flex-shrink: 0;
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 900; color: var(--ink);
+}
+
+/* TESTIMONIALS */
+.testimonials { background: #fff; border-top: 1px solid var(--border); }
+.testi-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 20px; margin-top: 40px;
+  text-align: left;
+}
+.testi-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 26px;
+  position: relative;
+  box-shadow: 0 4px 24px var(--shadow);
+  display: flex; flex-direction: column;
+}
+.testi-card::before {
+  content: '"';
+  position: absolute; top: 12px; right: 24px;
+  font-size: 80px; line-height: 1;
+  color: var(--gold-pale); font-family: Georgia, serif;
+  font-weight: 700; z-index: 0;
+}
+.testi-header {
+  display: flex; align-items: center; gap: 12px;
+  margin-bottom: 18px; position: relative; z-index: 1;
+}
+.testi-avatar {
+  width: 44px; height: 44px;
+  background: linear-gradient(135deg, #1C2645, #C9920A);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 900; font-size: 18px;
+  flex-shrink: 0;
+}
+.testi-name { font-size: 15px; font-weight: 800; color: var(--ink); line-height: 1.3; }
+.testi-meta {
+  font-size: 13.5px; color: var(--gray-lt);
+  margin-top: 3px; letter-spacing: .02em;
+}
+.testi-meta span { color: var(--green); font-weight: 700; }
+.testi-rating {
+  margin-bottom: 14px; position: relative; z-index: 1;
+  letter-spacing: 2px; font-size: 15px;
+  color: var(--gold-lt);
+}
+.testi-title-text {
+  font-size: 16px; font-weight: 800; color: var(--ink);
+  line-height: 1.4; margin-bottom: 14px;
+  position: relative; z-index: 1;
+}
+.testi-body {
+  font-size: 14.5px; color: var(--gray);
+  line-height: 1.85; position: relative; z-index: 1;
+  flex: 1; font-weight: 400;
+}
+.testi-body strong {
+  color: var(--ink); font-weight: 700;
+  background: linear-gradient(transparent 60%, rgba(232,184,75,.35) 60%);
+}
+.testi-tags {
+  display: flex; gap: 6px; flex-wrap: wrap;
+  margin-top: 16px; position: relative; z-index: 1;
+}
+.testi-tag {
+  font-size: 12.5px; font-weight: 700;
+  background: var(--cream); color: var(--gray);
+  padding: 5px 12px; border-radius: 12px;
+  letter-spacing: .02em;
+}
+.testi-source {
+  margin-top: 14px; padding-top: 14px;
+  border-top: 1px solid var(--border);
+  font-size: 13.5px; color: var(--gray-lt);
+  position: relative; z-index: 1;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.testi-source-date { font-weight: 500; }
+.testi-source-link { color: var(--gold); font-weight: 700; text-decoration: none; }
+.testi-source-link:hover { text-decoration: underline; }
+.testi-foot-note {
+  text-align: center; margin-top: 36px;
+  font-size: 13px; color: var(--gray-lt);
+  padding: 16px;
+  background: var(--cream);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+/* WHY LIVE */
+.why-live { background: var(--ink); color: #fff; }
+.why-live .section-title { color: #fff; }
+.why-live .section-desc { color: rgba(255,255,255,.7); }
+.why-live .eyebrow-line { background: var(--gold-lt); }
+.why-live .eyebrow-text { color: var(--gold-lt); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 16px; margin-top: 40px;
+}
+.why-item {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 28px 24px;
+  text-align: left;
+}
+.why-icon {
+  width: 48px; height: 48px;
+  background: var(--gold-lt);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+.why-title { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.why-desc { font-size: 14px; color: rgba(255,255,255,.7); line-height: 1.8; }
+
+/* PRICING */
+.pricing { background: var(--cream); border-top: 1px solid var(--border); }
+.pricing-grid {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px; margin-top: 40px;
+}
+.pricing-card {
+  border: 1px solid var(--border);
+  background: #fff; border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px var(--shadow);
+  display: flex; flex-direction: column;
+  position: relative;
+}
+.pricing-card.premium {
+  border-color: var(--gold-lt);
+  box-shadow: 0 8px 36px rgba(201,146,10,.22);
+  transform: scale(1.02);
+}
+.pricing-head {
+  padding: 28px 24px 20px;
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  position: relative;
+}
+.pricing-card.premium .pricing-head {
+  background: linear-gradient(135deg, #C9920A, #E8B84B);
+  color: #1C2645;
+}
+.pricing-popular {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  background: var(--red); color: #fff;
+  font-size: 12.5px; font-weight: 800;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 5px 14px; border-radius: 3px;
+  white-space: nowrap;
+}
+.pricing-track {
+  font-size: 13px; letter-spacing: .12em; text-transform: uppercase;
+  font-weight: 700; opacity: .7;
+  margin-bottom: 6px;
+}
+.pricing-name { font-size: 1.3rem; font-weight: 900; letter-spacing: -.3px; }
+.pricing-body { padding: 24px; text-align: left; flex: 1; display: flex; flex-direction: column; }
+.pricing-amount { margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid var(--border); }
+.pricing-price {
+  font-size: 2.8rem; color: var(--ink);
+  font-weight: 900; letter-spacing: 0.01em; line-height: 1;
+}
+.pricing-price small { font-size: 1rem; font-weight: 500; color: var(--gray); }
+.pricing-vat { font-size: 13px; color: var(--gray); margin-top: 4px; }
+.pricing-real {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: var(--gold-pale); border: 1px solid rgba(201,146,10,.25);
+  padding: 6px 12px; margin-top: 10px;
+  font-size: 13px; color: var(--gold); font-weight: 800;
+  border-radius: 4px;
+}
+.pricing-saving {
+  display: inline-block;
+  background: var(--red); color: #fff;
+  padding: 5px 12px; margin-top: 8px;
+  font-size: 13px; font-weight: 800; letter-spacing: .04em;
+  border-radius: 4px;
+}
+.pricing-features {
+  list-style: none; display: flex; flex-direction: column; gap: 10px;
+  margin-bottom: 22px;
+}
+.pricing-features li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 14px; color: var(--gray); line-height: 1.65;
+}
+.pricing-features li.key { color: var(--ink); font-weight: 700; }
+.pricing-features li.bonus { color: var(--red); font-weight: 800; }
+.pricing-features li::before {
+  content: '✓'; color: var(--gold); font-weight: 900;
+  flex-shrink: 0; font-size: 14px; margin-top: 1px;
+}
+.pricing-features li.bonus::before { content: '🎁'; }
+.btn-pricing {
+  display: block; text-align: center;
+  padding: 14px; font-size: 14px; font-weight: 800;
+  letter-spacing: .04em; text-decoration: none;
+  border-radius: 8px;
+  border: 1.5px solid var(--ink); color: var(--ink);
+  background: #fff;
+  transition: all .2s; margin-top: auto;
+}
+.btn-pricing:hover { background: var(--ink); color: #fff; }
+.pricing-card.premium .btn-pricing {
+  background: var(--ink); color: #fff; border-color: var(--ink);
+}
+.pricing-card.premium .btn-pricing:hover {
+  background: var(--gold); color: #1C2645; border-color: var(--gold);
+}
+
+/* NOTICE */
+.notice { background: #fff; border-top: 1px solid var(--border); }
+.notice-list {
+  list-style: none; display: flex; flex-direction: column;
+  gap: 10px; margin-top: 28px; text-align: left;
+}
+.notice-list li {
+  font-size: 14px; color: var(--gray);
+  padding-left: 22px; position: relative;
+  line-height: 1.85; font-weight: 400;
+}
+.notice-list li::before {
+  content: '※'; position: absolute; left: 0;
+  color: var(--gold-lt); font-size: 13px;
+}
+
+/* CTA FINAL */
+.cta-final {
+  background: linear-gradient(155deg, #1C2645 0%, #263354 100%);
+  text-align: center;
+  padding: 88px 24px;
+  position: relative; overflow: hidden;
+}
+.cta-final-label {
+  font-size: 13px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--gold-lt);
+  margin-bottom: 14px; font-weight: 700;
+}
+.cta-final-title {
+  font-size: clamp(1.8rem,3.5vw,2.8rem);
+  font-weight: 900; color: #fff;
+  line-height: 1.25; margin-bottom: 16px;
+}
+.cta-final-title em { font-style: normal; color: var(--gold-lt); }
+.cta-final-desc {
+  color: rgba(255,255,255,.7);
+  font-size: 15px; margin-bottom: 36px; line-height: 1.8;
+}
+.cta-final-buttons {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+}
+.btn-gold {
+  background: var(--gold-lt); color: #1C2645;
+  padding: 16px 36px; font-size: 15px; font-weight: 900;
+  letter-spacing: .04em; text-decoration: none;
+  border-radius: 6px; transition: all .2s;
+}
+.btn-gold:hover { background: #f5ca5a; }
+.btn-ghost {
+  border: 1px solid rgba(255,255,255,.3);
+  color: rgba(255,255,255,.85);
+  padding: 16px 36px; font-size: 15px; font-weight: 700;
+  letter-spacing: .04em; text-decoration: none;
+  border-radius: 6px; transition: all .2s;
+}
+.btn-ghost:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+
+/* FOOTER */
+footer {
+  background: var(--ink);
+  padding: 22px 24px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-logo { font-size: 1.15rem; letter-spacing: .12em; color: rgba(245,240,232,.3); font-weight: 900; }
+.footer-copy { font-size: 12.5px; color: rgba(255,255,255,.3); }
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .countdown-bar { font-size: 11.5px; padding: 7px 12px; }
+  .section-wrap { padding: 52px 18px; }
+  .target-grid { grid-template-columns: 1fr; }
+  .tracks { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-card.premium { transform: none; }
+  .schedule-inner { grid-template-columns: 1fr; }
+  footer { flex-direction: column; text-align: center; }
+  .nav-logo-sub { display: none; }
+}
+@media(max-width:560px){
+  nav { padding: 12px 16px; }
+  .hero { padding: 120px 16px 56px; }
+  .section-wrap { padding: 44px 16px; }
+  .hero-stats { gap: 24px; }
+  .hero-cta-group { flex-direction: column; align-items: stretch; }
+  .btn-ink, .btn-outline { width: 100%; text-align: center; }
+  .cta-final { padding: 64px 16px; }
+  .cta-final-buttons { flex-direction: column; }
+  .btn-gold, .btn-ghost { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-mark">COUDAE</div>
+    <div class="nav-logo-sub">5월 초보 라이브 속성반</div>
+  </div>
+  <a href="https://admin.coudae.io/#/login" class="nav-cta">신청 및 문의</a>
+</nav>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar">
+  🔥 모집 마감 · 해외트랙 <strong>5/19(월) 24시</strong> · 리셀트랙 <strong>5/26(월) 24시</strong>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <div class="hero-eyebrow-line"></div>
+    <div class="hero-eyebrow-text">2026년 5월 · 초보 라이브 속성반</div>
+  </div>
+  <h1 class="hero-title">
+    6일 만에 완성하는<br>
+    <em>구매대행 & 리셀</em><br>
+    라이브 속성반
+  </h1>
+  <p class="hero-sub">
+    해외구매대행 3일 + 리셀 3일.<br>
+    매번 새롭게 업데이트되는 마스터의 라이브 강의로<br>
+    초보도 6일 만에 첫 매출까지 갑니다.
+  </p>
+  <div class="hero-target">
+    ✓ 초보 셀러 · 시니어 · 직장인 부업 모두 환영
+  </div>
+  <div class="hero-cta-group">
+    <a href="https://admin.coudae.io/#/login" class="btn-ink">문의하기</a>
+    <a href="#tracks" class="btn-outline">커리큘럼 보기</a>
+  </div>
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">18H</div>
+      <div class="stat-label">총 라이브 시간</div>
+    </div>
+    <div>
+      <div class="stat-num">2</div>
+      <div class="stat-label">트랙 (해외 + 리셀)</div>
+    </div>
+    <div>
+      <div class="stat-num">∞</div>
+      <div class="stat-label">녹화본 영구 제공</div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE STRIP -->
+<section class="schedule-strip">
+  <div class="schedule-inner">
+    <div class="schedule-card schedule-track-1">
+      <div class="schedule-icon">🌏</div>
+      <div class="schedule-info">
+        <div class="schedule-track">Track 01 · 해외구매대행</div>
+        <div class="schedule-name">3일 속성 완성</div>
+        <div class="schedule-date"><strong>5/20(수) ~ 5/22(금)</strong> · 매일 저녁 8~11시</div>
+        <div class="schedule-deadline">신청 마감 5/19(월) 24시</div>
+      </div>
+    </div>
+    <div class="schedule-card schedule-track-2">
+      <div class="schedule-icon">🛍</div>
+      <div class="schedule-info">
+        <div class="schedule-track">Track 02 · 국내 리셀</div>
+        <div class="schedule-name">3일 속성 완성</div>
+        <div class="schedule-date"><strong>5/27(수) ~ 5/29(금)</strong> · 매일 저녁 8~11시</div>
+        <div class="schedule-deadline">신청 마감 5/26(월) 24시</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARGET -->
+<section class="target">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">이런 분께 추천드립니다</div></div>
+    <h2 class="section-title">처음이라도,<br>늦었다고 생각해도 괜찮습니다</h2>
+    <div class="target-grid">
+      <div class="target-item">
+        <div class="target-num">01</div>
+        <div class="target-title">구매대행 시작하려는 직장인</div>
+        <div class="target-desc">평일 저녁 3일 집중 라이브로 부담 없이 시작. 본업 끝나고 8시부터 새 길을 엽니다.</div>
+      </div>
+      <div class="target-item">
+        <div class="target-num">02</div>
+        <div class="target-title">등록은 하는데 안 팔리는 셀러</div>
+        <div class="target-desc">팔리는 상품 vs 안 팔리는 상품의 진짜 차이. 카테고리·상품명·소싱처를 6일에 완전 정복합니다.</div>
+      </div>
+      <div class="target-item">
+        <div class="target-num">03</div>
+        <div class="target-title">AI 자동화 처음 듣는 시니어</div>
+        <div class="target-desc">"코딩은 나랑 상관없는 세계"라고 생각했던 분도 강의 하루 만에 본인만의 자동화 프로그램을 만듭니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM TRACKS -->
+<section class="curriculum" id="tracks">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">두 트랙 커리큘럼</div></div>
+    <h2 class="section-title">관심 트랙만 골라도 OK<br>둘 다 들으면 41만원 절약</h2>
+    <p class="section-desc">각 트랙 3일 × 3시간 = 9시간. 평일 저녁 8시~11시 줌 라이브. 결석해도 녹화본 영구 제공.</p>
+
+    <div class="tracks">
+      <!-- Track 1: 해외구매대행 -->
+      <div class="track-card">
+        <div class="track-head track-head-1">
+          <div class="track-tag">Track 01</div>
+          <h3 class="track-title">🌏 해외구매대행 속성 완성</h3>
+          <div class="track-schedule"><strong>5/20(수) ~ 5/22(금)</strong> · 저녁 8~11시</div>
+        </div>
+        <div class="track-body">
+          <div class="track-sublabel">Day 01 · 5월 20일 (수) — 중국 구매대행</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">1</span><div><strong>중국 매출 나오는 카테고리</strong>1688·타오바오에서 한국 시장 적중 카테고리 구조</div></li>
+            <li><span class="track-list-num">2</span><div><strong>카테고리별 핵심 아이템 + 골든 키워드</strong>지금 당장 소싱·등록할 수 있는 실전 아이템 리스트</div></li>
+          </ul>
+          <div class="track-sublabel" style="margin-top:20px;">Day 02 · 5월 21일 (목) — 미국 + 일본</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">3</span><div><strong>미국 매출 카테고리·아이템</strong>아마존·이베이에서 한국 시장 적중 아이템 + 골든 키워드</div></li>
+            <li><span class="track-list-num">4</span><div><strong>일본 매출 카테고리·아이템</strong>라쿠텐·야후옥션 매출 카테고리 + 엔화 마진 구조</div></li>
+          </ul>
+          <div class="track-sublabel" style="margin-top:20px;">Day 03 · 5월 22일 (금) — 유럽 구매대행</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">5</span><div><strong>유럽 매출 카테고리·아이템</strong>독일·프랑스·영국 시장 적중 카테고리 + 골든 키워드</div></li>
+            <li><span class="track-list-num">6</span><div><strong>유럽 부가세·관세 구조 + 실전 리스트</strong>VAT 환급 + 배송 동선 + 지금 등록할 수 있는 아이템</div></li>
+            <li><span class="track-list-num">Q</span><div><strong>실시간 Q&A</strong>본인 상황 그대로 물어보는 시간 (수업 마무리)</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Track 2: 리셀 -->
+      <div class="track-card">
+        <div class="track-head track-head-2">
+          <div class="track-tag">Track 02</div>
+          <h3 class="track-title">🛍 국내 리셀 속성 완성</h3>
+          <div class="track-schedule"><strong>5/27(수) ~ 5/29(금)</strong> · 저녁 8~11시</div>
+        </div>
+        <div class="track-body">
+          <div class="track-sublabel">Day 01 · 5월 27일 (수) — 공략 소싱처·카테고리·아이템</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">1</span><div><strong>지금 팔리는 공략 소싱처</strong></div></li>
+            <li><span class="track-list-num">2</span><div><strong>골든 카테고리 4축 + 아이템 발굴</strong></div></li>
+          </ul>
+          <div class="track-sublabel" style="margin-top:20px;">Day 02 · 5월 28일 (목) — 도매와 브랜드리셀</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">3</span><div><strong>도매 리셀 카테고리·아이템</strong>무재고 위탁으로 마진 잘 나오는 카테고리 + 실전 아이템 리스트</div></li>
+            <li><span class="track-list-num">4</span><div><strong>브랜드 리셀 카테고리·아이템</strong>국내 미출시·정식수입 브랜드별 매출 카테고리 + 신뢰 키워드</div></li>
+          </ul>
+          <div class="track-sublabel" style="margin-top:20px;">Day 03 · 5월 29일 (금) — 상품명·썸네일·상세·지재권</div>
+          <ul class="track-list">
+            <li><span class="track-list-num">5</span><div><strong>리셀 상품명 작성법</strong>트렌드 검색어 + 사이즈/컬러 + 고민 키워드 4요소 공식</div></li>
+            <li><span class="track-list-num">6</span><div><strong>썸네일과 상세페이지 작성법</strong>클릭률·전환률 동시 잡는 구조 + AI 헬퍼 자동화</div></li>
+            <li><span class="track-list-num">7</span><div><strong>지재권 대처하는 법</strong>단종/한정/100% 정품 등 위험 키워드 안전 대체</div></li>
+            <li><span class="track-list-num">Q</span><div><strong>실시간 Q&A</strong>본인 등록 상품 즉석 리뉴얼 챌린지 (수업 마무리)</div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">수강생 후기</div></div>
+    <h2 class="section-title">강의 들으신 분들이<br>직접 남긴 솔직한 후기</h2>
+    <p class="section-desc">이번 라이브 속성반과 같은 마스터, 같은 결의 강의를 들으신 분들의 후기입니다.</p>
+
+    <div class="testi-grid">
+
+      <!-- Sammi -->
+      <div class="testi-card">
+        <div class="testi-header">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Sammi</div>
+            <div class="testi-meta">초보셀러 · <span>인기멤버</span></div>
+          </div>
+        </div>
+        <div class="testi-rating">★★★★★</div>
+        <div class="testi-title-text">그저 경이로운 이광성 대표님 1대1 코칭 강의 후기</div>
+        <div class="testi-body">
+          "매번 5시간 넘는 강의 동안 강사님도 수강생들도 지치지 않고 새벽까지 집중해서 듣게 하는 마력...
+          작년에도 들었는데 <strong>복습이 아니라 완전히 새롭게 업데이트</strong>되어 있더라고요.
+          특히 신기했던 부분이 <strong>AI를 활용한 실무 자동화</strong>. 코딩 한 번도 안 해본 제가
+          HTML로 마진계산기, 파이썬으로 도매꾹 모니터링 프로그램까지 강의 하루 만에 만들었어요.
+          새벽 4시까지 테스트하며 결국 성공... 코딩을 모르니까 못 한다고 선 그었던 제가
+          이제 내가 필요한 프로그램을 만들 수 있다는 자신감이 생겼습니다."
+        </div>
+        <div class="testi-tags">
+          <span class="testi-tag">AI 자동화 실습</span>
+          <span class="testi-tag">초보 가능</span>
+          <span class="testi-tag">매번 업데이트</span>
+        </div>
+        <div class="testi-source">
+          <span class="testi-source-date">2026.04.26</span>
+          <a href="https://cafe.naver.com/coudae/52821" target="_blank" rel="noopener" class="testi-source-link">조회 32 · 카페 원문 →</a>
+        </div>
+      </div>
+
+      <!-- Dreamtrue -->
+      <div class="testi-card">
+        <div class="testi-header">
+          <div class="testi-avatar">D</div>
+          <div>
+            <div class="testi-name">Dreamtrue (김상문)</div>
+            <div class="testi-meta">입문셀러 · <span>인기멤버</span></div>
+          </div>
+        </div>
+        <div class="testi-rating">★★★★★</div>
+        <div class="testi-title-text">이광성 대표님 1대1 강의를 꼭 들어야 하는 5가지 이유</div>
+        <div class="testi-body">
+          "End-to-End의 컨설팅과 이론을 전수받는 수업입니다.
+          ① <strong>소싱전략에 탁월한 지침</strong> ② <strong>AI 신세계</strong>를 보여줌
+          ③ 강의를 넘어 컨설팅으로 개인 Pain Point 해결 ④ 작년 재탕 아닌 새 내용
+          ⑤ <strong>이광성 대표님의 인품</strong> — 강의팔이에 상처받으신 분들에게 회복을 주십니다.
+          몇백만원 강의 듣고 허탈하셨던 분들 많으시지요? 회원들의 성공을 진심으로 바라고 실천하시는
+          모든 셀러의 롤모델입니다. You won't regret it~"
+        </div>
+        <div class="testi-tags">
+          <span class="testi-tag">소싱전략</span>
+          <span class="testi-tag">AI 자동화</span>
+          <span class="testi-tag">진정성</span>
+        </div>
+        <div class="testi-source">
+          <span class="testi-source-date">2026.04.25</span>
+          <a href="https://cafe.naver.com/coudae/52820" target="_blank" rel="noopener" class="testi-source-link">조회 28 · 카페 원문 →</a>
+        </div>
+      </div>
+
+      <!-- 가자시바 -->
+      <div class="testi-card">
+        <div class="testi-header">
+          <div class="testi-avatar">가</div>
+          <div>
+            <div class="testi-name">가자시바</div>
+            <div class="testi-meta">초보셀러 · <span>인기멤버</span></div>
+          </div>
+        </div>
+        <div class="testi-rating">★★★★★</div>
+        <div class="testi-title-text">이광성 대표님 1대1 강의 후기</div>
+        <div class="testi-body">
+          "이광성 대표님의 <strong>뇌를 복사하고 싶어서</strong> 1대1 코칭을 신청했는데요,
+          단순히 상품을 집어준다 이런 강의가 아닙니다. AI 활용해서 할 수 있는 것들을
+          많이 알려주셔서 업무가 훨씬 편해질 것 같네요. 1대1 코칭을 통해서
+          <strong>계속 방황하던 방향성도 잡아주시고</strong>, 개개인에 맞춰서 어떻게 진행하면
+          더 효율적인지에 대해 알려주셔서 너무 좋았습니다. 매우 만족스럽고 남은 기간도 너무 기대됩니다."
+        </div>
+        <div class="testi-tags">
+          <span class="testi-tag">방향성</span>
+          <span class="testi-tag">맞춤 조언</span>
+          <span class="testi-tag">AI 활용</span>
+        </div>
+        <div class="testi-source">
+          <span class="testi-source-date">2026.04.20</span>
+          <a href="https://cafe.naver.com/coudae/52809" target="_blank" rel="noopener" class="testi-source-link">조회 23 · 카페 원문 →</a>
+        </div>
+      </div>
+
+      <!-- 디지털노가리 -->
+      <div class="testi-card">
+        <div class="testi-header">
+          <div class="testi-avatar">디</div>
+          <div>
+            <div class="testi-name">디지털노가리</div>
+            <div class="testi-meta">수강생 · <span>인기멤버</span></div>
+          </div>
+        </div>
+        <div class="testi-rating">★★★★★</div>
+        <div class="testi-title-text">이광성 대표님의 1대1 코칭 강의후기 - 후덜덜</div>
+        <div class="testi-body">
+          "이틀에 걸친 <strong>엄청난 인사이트</strong>를 얻는 강의였습니다.
+          AI에 관심이 많아져서 몇 주간 새벽 두세 시까지 프로그램 만들고 있었는데
+          오늘 수업에서 프로그램 만들기 실습을 하니 너무 반가웠고, 제가 생각하지 못한 걸
+          만들어보라셔서 '왜 이건 만들 생각을 못했지?' 지금도 계속 디벨롭 중이네요.
+          AI는 못하는 게 없는 것 같습니다. <strong>광성대표님도 진짜 못하는 게 없으십니다.</strong>
+          아무에게도 알려주고 싶지 않은 시크릿꿀팁들!! 남은 수업들도 너무 기대됩니다."
+        </div>
+        <div class="testi-tags">
+          <span class="testi-tag">인사이트</span>
+          <span class="testi-tag">실습</span>
+          <span class="testi-tag">시크릿꿀팁</span>
+        </div>
+        <div class="testi-source">
+          <span class="testi-source-date">2026.04.19</span>
+          <a href="https://cafe.naver.com/coudae/52801" target="_blank" rel="noopener" class="testi-source-link">조회 32 · 카페 원문 →</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="testi-foot-note">
+      💬 모든 후기는 쿠대 공식 카페에 실제로 게시된 1대1 코칭 수강생들의 후기입니다.
+      이번 라이브 속성반은 같은 마스터·같은 결의 강의로 진행되며, 1:1 대신 단체 라이브 Q&A로 운영됩니다.
+    </div>
+  </div>
+</section>
+
+<!-- WHY LIVE -->
+<section class="why-live">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">왜 라이브여야 하는가</div></div>
+    <h2 class="section-title">녹화본의 안정감 +<br>라이브의 즉문즉답</h2>
+    <p class="section-desc">평일 저녁 3일 집중 라이브. 못 가도 영구 녹화본. 둘 다 가져가세요.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-icon">🎙</div>
+        <div class="why-title">실시간 Q&A</div>
+        <div class="why-desc">막힌 부분 그 자리에서 해결. 본인 상품 즉석 진단까지 받을 수 있습니다.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🎥</div>
+        <div class="why-title">영구 녹화본</div>
+        <div class="why-desc">결석해도 OK. 라이브 다음 날부터 녹화본 영구 제공. 반복 학습 무제한.</div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon">🌙</div>
+        <div class="why-title">평일 저녁 시간대</div>
+        <div class="why-desc">저녁 8~11시 줌 라이브. 직장인 본업 끝나고도, 시니어도 부담 없는 시간.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">수강료 안내</div></div>
+    <h2 class="section-title">세 가지 옵션 중<br>골라보세요</h2>
+    <p class="section-desc">모든 옵션에 쿠대 1개월 이용권(165,000원 상당) 포함 + 녹화본 영구 제공.</p>
+
+    <div class="pricing-grid">
+
+      <!-- Track 1 Single -->
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="pricing-track">Track 01</div>
+          <div class="pricing-name">🌏 해외구매대행</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-amount">
+            <div class="pricing-price">700,000<small>원</small></div>
+            <div class="pricing-vat">VAT 포함</div>
+            <div class="pricing-real">쿠대 1개월 포함 → 실질 535,000원</div>
+          </div>
+          <ul class="pricing-features">
+            <li class="key">5/20~22 라이브 3일 (9시간)</li>
+            <li>중국 매출 카테고리·아이템</li>
+            <li>미국·일본 매출 카테고리·아이템</li>
+            <li>유럽 매출 카테고리·아이템</li>
+            <li>영구 녹화본 제공</li>
+            <li>쿠대 1개월 이용권 포함</li>
+          </ul>
+          <a href="https://admin.coudae.io/#/login" class="btn-pricing">해외트랙 신청</a>
+        </div>
+      </div>
+
+      <!-- Track 1+2 Package -->
+      <div class="pricing-card premium">
+        <div class="pricing-head">
+          <div class="pricing-popular">가장 인기 · 41만원 절약</div>
+          <div class="pricing-track">Track 01 + 02</div>
+          <div class="pricing-name">⭐ 두 트랙 패키지</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-amount">
+            <div class="pricing-price">990,000<small>원</small></div>
+            <div class="pricing-vat">VAT 포함</div>
+            <div class="pricing-real">쿠대 1개월 포함 → 실질 825,000원</div>
+            <div class="pricing-saving">단일 합계 1,400,000원 → 410,000원 절약</div>
+          </div>
+          <ul class="pricing-features">
+            <li class="key">해외 + 리셀 라이브 6일 (18시간)</li>
+            <li>중국·미국·일본·유럽 매출 카테고리·아이템</li>
+            <li>리셀 공략 소싱처·카테고리·아이템</li>
+            <li>도매·브랜드리셀 + 썸네일·상세·상품명·지재권</li>
+            <li>영구 녹화본 제공</li>
+            <li>쿠대 1개월 이용권 포함</li>
+          </ul>
+          <a href="https://admin.coudae.io/#/login" class="btn-pricing">패키지 신청</a>
+        </div>
+      </div>
+
+      <!-- Track 2 Single -->
+      <div class="pricing-card">
+        <div class="pricing-head">
+          <div class="pricing-track">Track 02</div>
+          <div class="pricing-name">🛍 국내 리셀</div>
+        </div>
+        <div class="pricing-body">
+          <div class="pricing-amount">
+            <div class="pricing-price">700,000<small>원</small></div>
+            <div class="pricing-vat">VAT 포함</div>
+            <div class="pricing-real">쿠대 1개월 포함 → 실질 535,000원</div>
+          </div>
+          <ul class="pricing-features">
+            <li class="key">5/27~29 라이브 3일 (9시간)</li>
+            <li>공략 소싱처·카테고리·아이템</li>
+            <li>도매·브랜드리셀 카테고리·아이템</li>
+            <li>카테고리별 썸네일·상세·상품명·지재권</li>
+            <li>영구 녹화본 제공</li>
+            <li>쿠대 1개월 이용권 포함</li>
+          </ul>
+          <a href="https://admin.coudae.io/#/login" class="btn-pricing">리셀트랙 신청</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- NOTICE -->
+<section class="notice">
+  <div class="section-wrap">
+    <div class="eyebrow"><div class="eyebrow-line"></div><div class="eyebrow-text">안내 사항</div></div>
+    <h2 class="section-title">신청 전 꼭 확인해주세요</h2>
+    <ul class="notice-list">
+      <li>라이브 강의는 줌(Zoom)으로 진행되며, 신청 후 등록하신 연락처로 상세 안내 메시지를 발송해드립니다.</li>
+      <li>녹화본은 라이브 다음 날부터 무기한 제공되며, 결석하셔도 동일하게 시청 가능합니다.</li>
+      <li>두 트랙 패키지는 단일 합계(1,400,000원) 대비 410,000원 절약되는 구성입니다.</li>
+      <li>모든 옵션에 쿠대 1개월 이용권(165,000원 상당)이 자동 발급됩니다.</li>
+      <li>모집 마감: 해외트랙 5월 19일(월) 24시 · 리셀트랙 5월 26일(월) 24시</li>
+      <li>강의 시작 후에는 환불이 어려우며, 시작 전 환불은 결제 수단별 규정에 따라 처리됩니다.</li>
+      <li>본 강의는 마스터의 실제 운영 경험을 공유하는 프로그램이며, 개별 매출 결과는 수강생의 실행력에 따라 다를 수 있습니다.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-final-label">5월 한정 · 해외 5/19 · 리셀 5/26 마감</div>
+  <h2 class="cta-final-title">
+    이번 5월,<br>
+    <em>구매대행으로 첫 매출</em><br>
+    찍어봅시다
+  </h2>
+  <p class="cta-final-desc">
+    18시간 라이브 + 영구 녹화본 + 쿠대 1개월 이용권.<br>
+    5월 한 달 안에 모든 흐름이 끝납니다.
+  </p>
+  <div class="cta-final-buttons">
+    <a href="https://admin.coudae.io/#/login" class="btn-gold">지금 신청하기</a>
+    <a href="#tracks" class="btn-ghost">커리큘럼 다시 보기</a>
+  </div>
+  <p style="margin-top:28px;font-size:12px;color:rgba(255,255,255,.35);">
+    문의: 채널톡 · 카카오톡 단톡방 · coudae.io
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">COUDAE</div>
+  <div class="footer-copy">© 2026 Coudae. All rights reserved. · coudae.io</div>
+</footer>
+
+</body>
+</html>
